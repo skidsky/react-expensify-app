@@ -19,8 +19,10 @@ export class ExpenseListFilters extends React.Component {
   }
   onSortChange = (e) => {
     if (e.target.value === 'date') {
+      console.log('sorting by Date');
       this.props.sortByDate();
     } else if (e.target.value === 'amount') {
+      console.log('sorting by Amount');
       this.props.sortByAmount();
     }
   }
