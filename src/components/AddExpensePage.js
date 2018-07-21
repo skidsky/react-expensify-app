@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import { addExpense } from '../actions/expenses';
+import { startAddExpense } from '../actions/expenses';
 
 // class created to avoid inline function?
 export class AddExpensePage extends React.Component {
-  onSubmit = (expense) => {
-        // props.dispatch(addExpense(expense)); // transfered to mapDispatchToProps
-        this.props.addExpense(expense); // not yet clear!
-        this.props.history.push('/');
+  onSubmit = (expense) => { 
+    // props.dispatch(addExpense(expense)); // transfered to mapDispatchToProps
+    this.props.startAddExpense(expense); // not yet clear!
+    this.props.history.push('/');
   };
   render () {
     return (
@@ -23,7 +23,7 @@ export class AddExpensePage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addExpense: (expense) => dispatch(addExpense(expense))
+  startAddExpense: (expense) => dispatch(startAddExpense(expense))
 });
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);
