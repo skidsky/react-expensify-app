@@ -10,9 +10,12 @@ export default (expenses, { text, sortBy, startDate, endDate }) => {
 
     return startDateMatch && endDateMatch && textMatch;
   }).sort((a, b) => {
+    // console.log('selector sortby', sortBy);
     if (sortBy === 'date') {
+      // console.log('createdAt', a.createdAt, b.createdAt);
       return a.createdAt < b.createdAt ? 1 : -1;
     } else if (sortBy === 'amount') {
+      // console.log('amount', a.amount, b.amount);
       return a.amount < b.amount ? 1 : -1;
     }
   });
